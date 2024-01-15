@@ -18,7 +18,7 @@ export const GETTING_STARTED_STEPS = [
   },
   {
     message: "Create a <b>new Route</b> called <code>/me</code>",
-    hint: 'Create a new directory called <code>me</code> in <code>src/routes</code>. Within this directory create a <code>index.tsx</code> file or copy the <code>src/routes/index.tsx</code> file. Your new route is now accessible <a href="/me" target="_blank">here</a> ✨',
+    hint: 'Create a new directory called <code>me</code> in <code>src/routes</code>. Within this directory create a <code>index.old.tsx</code> file or copy the <code>src/routes/index.old.tsx</code> file. Your new route is now accessible <a href="/me" target="_blank">here</a> ✨',
   },
   {
     message: "Time to have a look at <b>Forms</b>",

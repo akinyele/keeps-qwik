@@ -1,0 +1,12 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+.note-input-wrapper {
+    padding: 2rem;
+}
