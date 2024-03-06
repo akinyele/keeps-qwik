@@ -1,17 +1,11 @@
 /** @jsxImportSource react */
 
 import { qwikify$ } from "@builder.io/qwik-react";
-import {Box, Button, Card, CardActions, CardContent, FormControl, styled, TextField, withStyles} from "@mui/material";
-import {ChangeEventHandler, EventHandler, FocusEventHandler, useEffect, useReducer, useRef, useState} from "react";
+import {Box, Button, Card, CardActions, TextField} from "@mui/material";
+import {ChangeEventHandler, EventHandler, useRef} from "react";
 import useOutsideClick from "~/integrations/react/hooks/useOutsideClick";
 import {noOp} from "~/utils/index.js.js";
-
-
-const CardContentNoPadding = styled(CardContent)(`
-  &:last-child {
-    padding-bottom: 16px;
-  }
-`);
+import CardContentNoPadding from "~/integrations/react/component/material-uil";
 
 export const MUICard = qwikify$(Card);
 
@@ -26,7 +20,7 @@ type NoteProps = {
     onClose: EventHandler<any>
 }
 
-const NoteComponent = ({
+const AddNotesComponent = ({
                            isFocused,
                            title,
                            note,
@@ -82,5 +76,5 @@ const NoteComponent = ({
 }
 
 
-export const AddNotes = qwikify$(NoteComponent, {eagerness: "hover"})
+export const AddNotesReact = qwikify$(AddNotesComponent, {eagerness: "hover"})
 

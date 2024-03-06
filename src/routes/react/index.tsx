@@ -1,21 +1,30 @@
-import { $, component$, useSignal, useStyles$ } from "@builder.io/qwik";
-import { AddNotes } from "~/integrations/react/component/add-notes";
-import styles from "./index.css?inline"
 import { ChangeEvent } from "react";
+import { $, component$, useSignal, useStyles$ } from "@builder.io/qwik";
 
-type Note = {
-    notes: string,
-    title: string
-}
+import { AddNotesReact } from "~/integrations/react/component/add-notes-react";
+import styles from "./index.css?inline"
+import {Note} from "~/integrations/react/component/note/models";
+import {NoteListComponent} from "~/integrations/react/component/note-list";
 
 export default component$(() => {
     useStyles$(styles)
 
     const notes = useSignal<Note[]>([
         {
+            id: "0",
             title: "test",
             notes: "lorem ipsum,"
-        }
+        },
+        {
+            id: "1",
+            title: "test 1",
+            notes: "lorem ipsum,"
+        },
+        {
+            id: "2",
+            title: "test 2",
+            notes: "lorem ipsum,"
+        },
     ])
 
     const isFocused = useSignal(false)
@@ -48,6 +57,7 @@ export default component$(() => {
         if (note.value || title.value) {
             // TODO save create note; set title and note
             const newNote : Note = {
+                id: Date.now().toString(),
                 notes: note.value,
                 title: title.value
             }
@@ -63,10 +73,12 @@ export default component$(() => {
         isFocused.value = true
     })
 
+
     return <>
+
         <div class="wrapper">
             <div class="note-input-wrapper">
-                <AddNotes
+                <AddNotesReact
                     isFocused={isFocused.value}
                     title={title.value}
                     note={note.value}
@@ -78,9 +90,8 @@ export default component$(() => {
                 />
             </div>
 
-            <div class="notes-list">
+            <NoteListComponent  listId={"1"} notes={notes.value}/>
 
-            </div>
         </div>
     </>
 })

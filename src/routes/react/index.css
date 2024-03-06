@@ -10,3 +10,11 @@
 .note-input-wrapper {
     padding: 2rem;
 }
+
+.notes-list {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 2rem;
+}
